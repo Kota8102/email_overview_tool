@@ -41,6 +41,7 @@ python src/main.py
 このコマンドは、設定されたOpenAIモデルを使用して、指定されたメールの概要を生成し、結果をMarkdown形式でoutputディレクトリのoutput.mdファイルに保存します。
 
 ## Directory
+```
 .
 ├── .devcontainer
 │   └── devcontainer.json
@@ -56,6 +57,7 @@ python src/main.py
     └── modules
         ├── get_overview.py
         └── output_markdown.py
+```
 
 ## Troubleshooting
 
