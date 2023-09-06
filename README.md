@@ -41,22 +41,26 @@ python src/main.py
 このコマンドは、設定されたOpenAIモデルを使用して、指定されたメールの概要を生成し、結果をMarkdown形式でoutputディレクトリのoutput.mdファイルに保存します。
 
 ## Directory
+
+以下はプロジェクトの主要なディレクトリ構造と各ディレクトリ/ファイルの説明です。
+
 ```
 .
 ├── .devcontainer
-│   └── devcontainer.json
-├── .env
-├── .gitignore
-├── Makefile
-├── README.md
+│   └── devcontainer.json          # 開発コンテナの設定ファイル
+├── .env                          # 環境変数を設定するためのファイル
+├── .gitignore                    # gitで無視するファイル/ディレクトリのリスト
+├── Makefile                      # セットアップや依存関係のインストールのためのMakefile
+├── README.md                     # プロジェクトの説明と使用方法を記載したドキュメント
 ├── output
-    └── output.md
-├── requirements.txt
+│   └── output.md                 # 生成されたメールの概要を保存するMarkdownファイル
+├── requirements.txt              # プロジェクトの依存関係をリスト化したファイル
 └── src
-    ├── main.py
+    ├── main.py                   # 主要な実行ファイル
     └── modules
-        ├── get_overview.py
-        └── output_markdown.py
+        ├── get_overview.py       # OpenAIを使用してメールの概要を生成するモジュール
+        └── output_markdown.py    # 生成された概要をMarkdown形式で保存するモジュール
+
 ```
 
 ## Troubleshooting
