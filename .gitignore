@@ -1,0 +1,7 @@
+.env
+.mypy_cache/
+
+# Operating Systems
+.DS_Store
+
+output/
