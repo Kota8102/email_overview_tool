@@ -2,6 +2,7 @@ import os
 from datetime import datetime
 
 import pytz
+from tqdm import tqdm
 
 
 def save_to_markdown(texts, directory="output"):
@@ -14,7 +15,7 @@ def save_to_markdown(texts, directory="output"):
     # outputディレクトリが存在しない場合、ディレクトリを作成
     os.makedirs(os.path.dirname(filename), exist_ok=True)
 
-    with open(filename, 'w') as file:
+    with open(filename, 'w', encoding="utf-8") as file:
 
         file.write(f"# {current_date}のメール一覧\n\n")
         # 合計の件数を記載
@@ -22,9 +23,9 @@ def save_to_markdown(texts, directory="output"):
 
         # 要約のリストを記載
         file.write("## 要約\n")
-        for text_dict in texts:
+        for text_dict in tqdm(texts, desc="Writing to markdown", ncols=100):
             file.write(f"- **件名**: {text_dict['件名']}\n")
-            file.write(f"  - **要約**: {text_dict['要約']}\n\n")
+            file.write(f"- **要約**: {text_dict['要約']}\n\n\n")
 
 
 if __name__ == '__main__':
